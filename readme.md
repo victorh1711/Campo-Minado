@@ -1,10 +1,10 @@
-#  Campo Minado (Minesweeper)
+# Campo Minado (Minesweeper)
 
 Um jogo de Campo Minado moderno desenvolvido com **JavaScript puro, HTML e CSS**, focado em lógica, interatividade e experiência visual refinada.
 
 ---
 
-## 🎮 Funcionalidades
+## Funcionalidades
 
 *  Grid dinâmico (Easy, Normal, Hard)
 *  Geração aleatória de bombas (com proteção no primeiro clique)
@@ -63,7 +63,7 @@ Os tempos são salvos automaticamente no navegador.
 
 ---
 
-##  Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 📁 src/
@@ -81,23 +81,16 @@ index.html
 
 ## Como rodar
 
-1. Clone o repositório:
+1. Clone o repositório e acesse a pasta:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repo.git
+   cd seu-repo
+   ```
 
-```
-git clone https://github.com/seu-usuario/seu-repo.git
-```
-
-2. Abra o projeto:
-
-```
-cd seu-repo
-```
-
-3. Execute com um servidor local (recomendado):
-
-* VSCode Live Server
-* Npx serve
-```
+2. Execute com um servidor local (ex: VSCode Live Server ou npx):
+   ```bash
+   npx serve .
+   ```
 
 ---
 
@@ -123,6 +116,6 @@ Este projeto é de uso livre para fins de estudo e aprendizado.
 
 ---
 
-##  Autor
+## Autor
 
 Victorh1711
