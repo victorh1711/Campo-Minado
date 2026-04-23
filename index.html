@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minado</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>  
+    <div class="best-score" title="Melhor pontuação">
+        <img src="./icons/trophy.png" alt="trophy imagem" class="best-score__icon">
+        <p class="best-score__text" id="bestTime"></p>
+    </div>
+    
+    <header class="game-stats">
+        <p class="game-stats__count">
+            Bandeiras: <span id="flags-counter"></span>
+        </p>
+        <p class="game-stats__timer" id="display-timer">
+            00:00
+        </p>
+        <select class="game-stats__grid" id="grid-select">
+            <option value="easy">Fácil</option>
+            <option value="normal">Médio</option>
+            <option value="hard">Difícil</option>
+        </select>
+    </header>
+
+    <main class="game-container">
+        <section class="game-board" id="game-board">
+        </section>
+    </main>
+
+    <dialog class="modal" id="game-modal">
+        <div class="modal__content">
+            <h1 class="modal__title" id="modal-title"></h1>
+            <p class="modal__text">
+                Tempo total: <span id="final-time">0</span>s
+            </p>
+            <button class="modal__button" id="btn-restart">Novo Jogo</button>
+        </div>
+    </dialog>
+
+    <script type="module" src="JS/game.js"></script>
+    <script type="module" src="JS/field.js"></script>
+    <script type="module" src="JS/timer.js"></script>
+    <script type="module" src="JS/audio.js"></script>
+</body>
+</html>
