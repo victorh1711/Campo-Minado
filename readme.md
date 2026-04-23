@@ -106,7 +106,8 @@ index.html
 
 ## Preview
 
-*(adicione aqui um print do jogo depois)*
+<img width="1366" height="768" alt="Captura de tela 2026-04-23 185120" src="https://github.com/user-attachments/assets/2428daa2-b20d-4a3b-8362-825cfb3a66b8" />
+
 
 ---
 
