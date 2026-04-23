@@ -47,6 +47,7 @@ function winGame() {
     });
 
     timerFile.getScore(timerFile.seconds, getDifficulty())
+    audioFile.playAudio('victory')
 }
 
 function loseGame(index) {
