@@ -13,10 +13,7 @@ Um jogo de Campo Minado moderno desenvolvido com **JavaScript puro, HTML e CSS**
 *  Timer em tempo real
 *  Sistema de **melhor tempo (best score)** por dificuldade
 *  Persistência com `localStorage`
-*  Animações:
-
-  * Plantar bandeira 
-  * Explosão de bombas 
+*  Animações: plantar bandeira, Explosão de bombas
 *  Feedback sonoro (flag, vitória, derrota)
 *  UI moderna com efeitos de hover, sombra e glassmorphism
 
@@ -66,14 +63,14 @@ Os tempos são salvos automaticamente no navegador.
 ## Estrutura do Projeto
 
 ```
-📁 src/
+📁 JS/
  ├── game.js        # lógica principal
  ├── field.js       # grid e bombas
  ├── timer.js       # controle de tempo
  ├── audio.js       # sistema de áudio
-📁 styles/
 📁 icons/
 📁 audio/
+index.css
 index.html
 ```
 
