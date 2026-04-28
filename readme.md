@@ -116,4 +116,4 @@ Este projeto é de uso livre para fins de estudo e aprendizado.
 
 ## Autor
 
-Victorh1711
+@VicHugo / victorh1711
