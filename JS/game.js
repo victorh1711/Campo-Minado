@@ -122,10 +122,6 @@ function initEvents() {
 }
 
 game.selectGrid.addEventListener("change", () => {
-
-    if (gameStarted && !gameEnd) {
-        if (!confirm("Reiniciar o jogo?")) return;
-    }
     timerFile.loadRecord(getDifficulty())
 
     fieldFile.isBombField.clear();
