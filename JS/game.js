@@ -122,7 +122,7 @@ function initEvents() {
             timeOfPress = setTimeout(() => {
                 toggleFlag(field)
                 return
-            }, 600);
+            }, 400);
         })
 
         field.addEventListener("touchend", () => clearTimeout(timeOfPress))
