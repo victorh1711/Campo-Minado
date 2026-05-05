@@ -19,7 +19,7 @@ export function setGrid(){
         maxBombs = 20
     }
     else if(grid == "hard"){
-        fontSize = "100%"
+        fontSize = "110%"
         gridSize = 15
         maxBombs = 35
     }

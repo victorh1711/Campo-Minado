@@ -8,6 +8,9 @@
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     width: min(90vw, 500px);
+    @media (max-width: 40em) {
+        width: min(calc(100vw - 30px), 600px);
+    }
     aspect-ratio: 1;
     border-radius: 20px;
     overflow: hidden;
