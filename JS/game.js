@@ -17,6 +17,7 @@ export const game = {
 
 export let gameStarted = false;
 export let gameEnd = false;
+let timeOfPress;
 
 function getDifficulty(){
     return game.selectGrid.value
@@ -115,6 +116,18 @@ function initEvents() {
             checkWin();
         });
     });
+
+    game.fields.forEach(field =>{
+        field.addEventListener("touchstart", () =>{
+            timeOfPress = setTimeout(() => {
+                toggleFlag(field)
+                return
+            }, 600);
+        })
+
+        field.addEventListener("touchend", () => clearTimeout(timeOfPress))
+        field.addEventListener("touchmove", () => clearTimeout(timeOfPress))
+    })
     
     game.restartBtn.addEventListener("click", () => {
         location.reload();
