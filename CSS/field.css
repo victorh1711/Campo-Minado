@@ -1,0 +1,95 @@
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    width: min(90vw, 500px);
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: #16a34a; 
+}
+
+
+.field {
+    aspect-ratio: 1;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.field:nth-child(odd) { background: #22c55e; }
+.field:nth-child(even) { background: #16a34a; }
+
+.field:hover {
+    filter: brightness(1.1);
+    z-index: 1;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid black
+}
+
+
+.field--is-bomb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ef4444 !important;
+    animation: explode 0.3s ease;
+}
+
+.field--flagged {
+    position: relative;
+}
+
+.field--flagged::after {
+    content: "";
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 60%;
+    height: 60%;
+    background-image: url("icons/flag.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+    animation: plantFlag 0.25s ease-out;
+}
+
+.field--revealed:nth-child(even){
+    background-color: #b8a791 !important;
+}
+
+.field--revealed:nth-child(odd){
+    background-color: #d6bba3 !important;
+}
+.field--revealed[data-number="1"] { color: #0b5ffc; } 
+.field--revealed[data-number="2"] { color: #10813a; } 
+.field--revealed[data-number="3"] { color: #dc143c; } 
+.field--revealed[data-number="4"] { color: darkblue;} 
+.field--revealed[data-number="5"] { color: #7c2d12; }
+.field--revealed[data-number="6"] { color: #067d9b; }
+.field--revealed[data-number="7"] { color: #000000; }
+.field--revealed[data-number="8"] { color: #475569; }
+
+
+.bomb-icon {
+    width: 60%;
+    aspect-ratio: 1;
+    background-color: #7f1d1d;
+    border-radius: 50%;
+}
