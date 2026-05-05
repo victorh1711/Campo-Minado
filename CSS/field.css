@@ -61,7 +61,7 @@
     translate: -50% -50%;
     width: 60%;
     height: 60%;
-    background-image: url("icons/flag.png");
+    background-image: url("../icons/flag.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
