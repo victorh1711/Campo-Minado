@@ -118,7 +118,8 @@ function initEvents() {
     });
 
     game.fields.forEach(field =>{
-        field.addEventListener("touchstart", () =>{
+        field.addEventListener("touchstart", (e) =>{
+            e.preventDefault()
             timeOfPress = setTimeout(() => {
                 toggleFlag(field)
                 return
