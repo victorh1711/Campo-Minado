@@ -4,15 +4,20 @@ import * as audioFile from './audio.js';
 
 export const game = {
     board: document.getElementById("game-board"),
+    fields: [],
+
     modal: document.getElementById("game-modal"),
     modalTitle: document.getElementById("modal-title"),
-    finalTime: document.getElementById("final-time"),
+    restartBtn: document.getElementById("btn-restart"),
+
     displayTimer: document.getElementById("display-timer"),
+    finalTime: document.getElementById("final-time"),
     flagsCounter: document.getElementById("flags-counter"),
     selectGrid: document.getElementById("grid-select"),
-    restartBtn: document.getElementById("btn-restart"),
-    fields: [],
-    bestTime: document.getElementById('bestTime')
+    
+    bestTime: document.getElementById("bestTime"),
+    toggleCommand: document.getElementById("toggleCommand"),
+    commandIcon: document.getElementById("commandIcon")
 };
 
 export let gameStarted = false;
@@ -71,6 +76,11 @@ function loseGame(index) {
     });
 }
 
+
+
+
+
+
 function toggleFlag(field) {
     if (field.classList.contains("field--revealed")) return;
     const isFlagged = field.classList.contains('field--flagged')
@@ -89,12 +99,13 @@ function toggleFlag(field) {
 }
 
 function initEvents() {
+    let command = "reveal"; 
+
     game.fields.forEach((field, index) => {
         field.addEventListener("click", (event) => {
-            
             if (gameEnd) return;
 
-            if (event.ctrlKey) {
+            if (command === "plantFlag" || event.ctrlKey) {
                 toggleFlag(field);
                 return;
             }
@@ -112,28 +123,29 @@ function initEvents() {
                 return;
             }
             
-            fieldFile.revealField(index)
+            fieldFile.revealField(index);
             checkWin();
         });
     });
 
-    game.fields.forEach(field =>{
-        field.addEventListener("touchstart", (e) =>{
-            e.preventDefault()
-            timeOfPress = setTimeout(() => {
-                toggleFlag(field)
-                return
-            }, 400);
-        })
+    game.toggleCommand.addEventListener("click", () => {
+        const icon = game.commandIcon;
 
-        field.addEventListener("touchend", () => clearTimeout(timeOfPress))
-        field.addEventListener("touchmove", () => clearTimeout(timeOfPress))
-    })
+        if (command === "reveal") {
+            icon.src = "icons/flag.png";
+            command = "plantFlag";
     
+        } else {
+            icon.src = "icons/shove.png";
+            command = "reveal";
+        }
+    });
+
     game.restartBtn.addEventListener("click", () => {
         location.reload();
     });
 }
+
 
 game.selectGrid.addEventListener("change", () => {
     timerFile.loadRecord(getDifficulty())
