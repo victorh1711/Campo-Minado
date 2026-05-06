@@ -19,7 +19,7 @@ body {
     display: none;
 }
 
-@media (max-width: 40em) {
+@media (pointer: coarse) {
     .toggleCommand{
         display: block;
         position: fixed;
