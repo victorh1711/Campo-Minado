@@ -20,14 +20,14 @@
 
         if (grid === "normal") {
             rows = 11;
-            cols = isMobile ? 8 : 11;
+            cols = isMobile ? 9 : 11;
             maxBombs = isMobile ? 14 : 20;
             fontSize = '150%'
         }
 
         if (grid === "hard") {
             rows = 15;
-            cols = isMobile ? 10 : 15;
+            cols = isMobile ? 11 : 15;
             maxBombs = isMobile ? 27 : 40;
             fontSize = '110%'
         }
