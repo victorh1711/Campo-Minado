@@ -9,7 +9,7 @@
 
     export function setGrid(){
         const grid = Global.game.selectGrid.value
-        const isMobile = window.innerWidth < 600 || 'ontouchstart' in window
+        const isMobile = window.innerWidth <= 768;
 
         if (grid === "easy") {
             rows = 7;
@@ -21,14 +21,14 @@
         if (grid === "normal") {
             rows = 11;
             cols = isMobile ? 9 : 11;
-            maxBombs = isMobile ? 14 : 20;
+            maxBombs = isMobile ? 15 : 20;
             fontSize = '150%'
         }
 
         if (grid === "hard") {
             rows = 15;
             cols = isMobile ? 11 : 15;
-            maxBombs = isMobile ? 27 : 40;
+            maxBombs = isMobile ? 25 : 40;
             fontSize = '110%'
         }
         Global.game.board.style.setProperty("--font-size", fontSize);
